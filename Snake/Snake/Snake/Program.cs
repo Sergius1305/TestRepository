@@ -12,8 +12,9 @@ namespace Snake
         {
             Console.SetBufferSize(Console.WindowWidth, Console.WindowHeight);
 
-            Point p1 = new Point(1, 3, '*');
-            p1.Draw();
+            Point p1 = new Point(2, 3, '*');
+            Snake snake = new Snake(p1, 4, Direction.RIGHT);
+            snake.Draw();
 
             HorizontalLine uphLine = new HorizontalLine(0, Console.WindowWidth - 2, 0, '+');
             HorizontalLine dwnhLine = new HorizontalLine(0, Console.WindowWidth - 2, Console.WindowHeight - 1, '+');
