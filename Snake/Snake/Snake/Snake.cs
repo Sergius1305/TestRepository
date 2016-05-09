@@ -61,5 +61,18 @@ namespace Snake
                 direction = Direction.DOWN;
             }
         }
+
+        public bool Eat(Point foot)
+        {
+            Point head = GetNextPoint();
+            if (head.IsHit(foot))
+            {
+                foot.Sym = head.Sym;
+                pList.Add(foot);
+                return true;
+            }
+            else
+                return false;
+        }
     }
 }

@@ -12,6 +12,8 @@ namespace Snake
         private int y;
         private char sym;
 
+        public char Sym { get { return sym; }  set { sym = value; } }
+
         public Point() { }
 
         public Point(int x, int y, char symbol)
@@ -46,6 +48,12 @@ namespace Snake
             x = p.x;
             y = p.y;
             sym = p.sym;
+        }
+
+        public bool IsHit(Point head)
+        {
+            if (head.x == x && head.y == y) return true;           
+            else return false;
         }
 
         public void Draw()
