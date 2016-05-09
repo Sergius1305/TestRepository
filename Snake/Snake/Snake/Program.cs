@@ -27,26 +27,17 @@ namespace Snake
             rightVLine.Draw();
 
 
-            snake.Move();
-            Thread.Sleep(200);
-            snake.Move();
-            Thread.Sleep(200);
-            snake.Move();
-            Thread.Sleep(200);
-            snake.Move();
-            Thread.Sleep(200);
-            snake.Move();
-            Thread.Sleep(200);
-            snake.Move();
-            Thread.Sleep(200);
-            snake.Move();
-            Thread.Sleep(200);
-            snake.Move();
-            Thread.Sleep(200);
-            snake.Move();
-            Thread.Sleep(200);
+            while (true)
+            {
+                if (Console.KeyAvailable)
+                {
+                    ConsoleKeyInfo key = Console.ReadKey();
+                    snake.HandleKey(key);
+                }
 
-            Console.ReadLine();
+                Thread.Sleep(300);
+                snake.Move();
+            }
         }
     }
 }
